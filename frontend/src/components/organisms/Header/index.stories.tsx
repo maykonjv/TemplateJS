@@ -2,6 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { Header, IHeader } from './';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 export default {
 	title: 'Organisms/Header',
@@ -11,7 +12,15 @@ export default {
 } as Meta;
 
 
-const Template: Story<IHeader> = (args) => <Header {...args} />;
+const Template: Story<IHeader> = (args) => (
+	<BrowserRouter>
+		<Switch>
+			<Route path="/">
+				<Header {...args} />
+			</Route>
+		</Switch>
+	</BrowserRouter>
+);
 
 export const Example1 = Template.bind({});
 Example1.args = {}

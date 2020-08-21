@@ -2,6 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { Footer, Props } from './';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 export default {
 	title: 'Organisms/Footer',
@@ -11,7 +12,15 @@ export default {
 } as Meta;
 
 
-const Template: Story<Props> = (args) => <Footer {...args} />;
+const Template: Story<Props> = (args) => (
+	<BrowserRouter>
+		<Switch>
+			<Route path="/">
+				<Footer {...args} />
+			</Route>
+		</Switch>
+	</BrowserRouter>
+);
 
 export const Example1 = Template.bind({});
 Example1.args = { year: 2020 }

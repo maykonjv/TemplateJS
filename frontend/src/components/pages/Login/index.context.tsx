@@ -1,8 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import api from '../../../services/api';
-import { logout, auth } from '../../../context/actions';
+import { auth } from '../../../context/actions';
 import { Store } from '../../../context/global';
 
 interface IAuth {
@@ -40,9 +40,9 @@ export function LoginProvider({ children }: JSX.ElementChildrenAttribute): JSX.E
 				const data = values;
 				// const request = await api.post("/auth", data);
 				// if (request.status === 200) {
-					auth(dispatch);
-					setLoading(false)
-					history.push("/")
+				auth(dispatch);
+				setLoading(false)
+				history.push("/")
 				// }
 			} catch (e) {
 				setLoading(false)
@@ -51,9 +51,6 @@ export function LoginProvider({ children }: JSX.ElementChildrenAttribute): JSX.E
 		}, 5000);
 	}
 
-	useEffect(() => {
-		logout(dispatch);
-	}, [])
 
 	return <LoginContext.Provider value={{ handleSubmit, onchange, isLoading }}>
 		{children}
