@@ -2,6 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { Breadcrumb, IBreadcrumb, IBreadcrumbItem } from './';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 export default {
 	title: 'Molecules/Breadcrumb',
@@ -11,7 +12,15 @@ export default {
 } as Meta;
 
 
-const Template: Story<IBreadcrumb> = (args) => <Breadcrumb {...args} />;
+const Template: Story<IBreadcrumb> = (args) => (
+	<BrowserRouter>
+		<Switch>
+			<Route path="/">
+				<Breadcrumb {...args} />
+			</Route>
+		</Switch>
+	</BrowserRouter>
+);
 
 export const Example1 = Template.bind({});
 Example1.args = { items: [{ name: 'Usuário' }] }
