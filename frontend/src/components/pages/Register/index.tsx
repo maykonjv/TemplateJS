@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { TemplateWithoutMenu } from '../../templates'
 import { Card } from '../../molecules/Card'
-import { Form, Col, Button, Container } from 'react-bootstrap';
+import { Form, Col, Button } from 'react-bootstrap';
 
 export interface Props {
 }
