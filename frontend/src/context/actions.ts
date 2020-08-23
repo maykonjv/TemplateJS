@@ -1,7 +1,8 @@
 export type Dispatch = React.Dispatch<IAction>;
 
 export interface IState {
-	isAuthenticated: boolean;
+	isAuthenticated: boolean,
+	user: any
 }
 export interface IAction {
 	type: string;
@@ -13,10 +14,10 @@ export const ACTION_TYPE = {
 	LOGOUT: 'LOGOUT'
 };
 
-export const auth = (dispatch: Dispatch) => {
+export const auth = (dispatch: Dispatch, data: any) => {
 	return dispatch({
 		type: ACTION_TYPE.AUTH,
-		payload: true
+		payload: data
 	});
 };
 

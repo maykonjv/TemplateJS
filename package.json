@@ -1,0 +1,22 @@
+{
+  "name": "TemplateJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "backend": "cd backend && yarn develop",
+    "fronted": "cd frontend && react-scripts start",
+    "storebook": "cd frontend && start-storybook -p 6006 -s public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maykonjv/TemplateJS.git"
+  },
+  "keywords": [],
+  "author": "Maykon Vaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maykonjv/TemplateJS/issues"
+  },
+  "homepage": "https://github.com/maykonjv/TemplateJS#readme"
+}

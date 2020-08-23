@@ -2,7 +2,8 @@ import React from 'react';
 import { IAction, IState, ACTION_TYPE } from './actions';
 
 const initialState: IState = {
-	isAuthenticated: false
+	isAuthenticated: false,
+	user: {},
 }
 
 const localState = JSON.parse(localStorage.getItem("managerjs:global") || JSON.stringify(initialState));
@@ -14,7 +15,7 @@ function reducer(state: IState, action: IAction): IState {
 	console.log("reducer:" + JSON.stringify(action))
 	switch (action.type) {
 		case ACTION_TYPE.AUTH:
-			let newState = { ...state, isAuthenticated: true }
+			let newState = { ...state, isAuthenticated: true, user: action.payload }
 			localStorage.setItem('managerjs:global', JSON.stringify(newState));
 			return newState;
 		case ACTION_TYPE.LOGOUT:
